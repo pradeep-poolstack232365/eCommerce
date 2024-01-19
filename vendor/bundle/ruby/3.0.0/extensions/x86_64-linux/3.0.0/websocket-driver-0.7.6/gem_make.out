@@ -1,0 +1,18 @@
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+/home/lenovo/.rvm/rubies/ruby-3.0.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-8e7877 sitelibdir\=./.gem.20240116-8889-8e7877 clean
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-8e7877 sitelibdir\=./.gem.20240116-8889-8e7877
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-8e7877 sitelibdir\=./.gem.20240116-8889-8e7877 install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20240116-8889-8e7877
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-8e7877 sitelibdir\=./.gem.20240116-8889-8e7877 clean

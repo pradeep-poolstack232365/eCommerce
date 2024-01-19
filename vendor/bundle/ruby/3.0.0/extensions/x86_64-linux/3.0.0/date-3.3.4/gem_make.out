@@ -1,0 +1,24 @@
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+/home/lenovo/.rvm/rubies/ruby-3.0.0/bin/ruby extconf.rb
+checking for rb_category_warn()... yes
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-ppwosj sitelibdir\=./.gem.20240116-8889-ppwosj clean
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-ppwosj sitelibdir\=./.gem.20240116-8889-ppwosj
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.so
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-ppwosj sitelibdir\=./.gem.20240116-8889-ppwosj install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20240116-8889-ppwosj
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/date-3.3.4/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-ppwosj sitelibdir\=./.gem.20240116-8889-ppwosj clean

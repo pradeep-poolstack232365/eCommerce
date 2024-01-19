@@ -1,0 +1,19 @@
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/debug-1.9.1/ext/debug
+/home/lenovo/.rvm/rubies/ruby-3.0.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-gzaa3o sitelibdir\=./.gem.20240116-8889-gzaa3o clean
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-gzaa3o sitelibdir\=./.gem.20240116-8889-gzaa3o
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-gzaa3o sitelibdir\=./.gem.20240116-8889-gzaa3o install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20240116-8889-gzaa3o/debug
+
+current directory: /home/lenovo/Desktop/E_Commerce_Application/e_commerce/vendor/bundle/ruby/3.0.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20240116-8889-gzaa3o sitelibdir\=./.gem.20240116-8889-gzaa3o clean
