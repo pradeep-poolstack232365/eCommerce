@@ -36,9 +36,7 @@ gem "sassc-rails"
 
 gem 'active_model_serializers'
 
-# image gem
-
-# gem "image_processing", ">= 1.2"
+gem "actionmailer"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"

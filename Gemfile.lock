@@ -332,6 +332,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  actionmailer
   active_model_serializers
   activeadmin
   bcrypt (~> 3.1.7)
