@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -14,6 +16,18 @@ Rails.application.routes.draw do
 
   post "/auth/login", to: "authentication#login"
 
-  resource :passwords, only: [:update]
+  resources :passwords, only: [:update]
+ 
+
+
+  # get 'password_reset_confirmation', to: 'password_resets#show_error', as: 'show_password_reset'
+
+  resources :password_resets do
+   get :show_error, on: :collection
+   get :edit_error, on: :collection
+    
+  end
+
+
 
 end
