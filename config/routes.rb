@@ -29,5 +29,30 @@ Rails.application.routes.draw do
   end
 
 
+  # resources :carts
+
+  post "/add_product/:id", to: "carts#add_product"
+
+  delete "/remove_product/:id", to: "carts#remove_product"
+
+
+
+  # resources :carts do
+  #   member do
+  #     post 'add_product'
+  #     delete 'remove_product'
+  #   end
+  # end
+
+
+  # resources :carts  do
+  #   post :add_product, on: :member
+  #   delete :remove_product, on: :member
+    
+  # end
+
+  # resources :carts, only: [:show,:post,:delete]
+
+
 
 end

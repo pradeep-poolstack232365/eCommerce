@@ -8,18 +8,9 @@ class User < ApplicationRecord
 
    has_one_attached :image
 
-# reset password token
+   has_one :cart
 
-   # def generate_reset_password_token
-   #  # debugger
-
-   #  update(reset_password_token: Devise.token_generator.generate(self.class, :reset_password_token))
-
-     
-   # end
-  # def generate_reset_password_token
-  #   update(reset_password_token: Devise.token_generator.generate(User, :reset_password_token),reset_password_sent_at: Time.now)
-  # end
+   after_create :create_cart
 
  def generate_reset_password_token
     update(reset_password_token: Devise.token_generator.generate(User, :reset_password_token),
