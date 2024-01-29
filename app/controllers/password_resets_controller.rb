@@ -1,6 +1,6 @@
 class PasswordResetsController < ApplicationController
 
-     before_action :authenticate_request, except: [:create]
+     # before_action :authenticate_request, except: [:create]
      
     def new
     end
