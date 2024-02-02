@@ -15,13 +15,30 @@ class CartsController < ApplicationController
 
 	def remove_product
 	# debugger
-     cart = @current_user.cart.products
-     product = Product.find(params[:id])
-      if product.present?
-      	cart.delete(product)
-     	render json: {message: "product has been removed successfully from cart"}
-      else
-     	render json: {message: "product not found #{params[:id]}"}
+	 unless @current_user
+	 	render json: {error: "User not authenticated"}, status: :unauthorized
+	 	return
 	 end
+
+	 unless @current_user.cart
+	 	render json: {error: "user doest not have a cart"}, status: :unprocessable_entity
+	 	return 
+	 end
+
+      product = Product.find_by(id: params[:id])
+
+      if product
+      	cart = @current_user.cart
+      	 if cart.products.include?(product)
+      	 	cart.products.delete(product)
+      	 	render json: {message: "product has removed successfully from the cart"}
+      	 else
+      	 	render json: {error: "product not found in the cart"}, status: :unprocessable_entity
+      	 end
+      else
+      	render json: {error: "product not found"}, status: :not_found
+      end
+
      end
+
 end

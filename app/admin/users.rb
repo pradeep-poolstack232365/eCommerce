@@ -15,6 +15,9 @@ ActiveAdmin.register User do
   #   permitted
   # end
   remove_filter :cart
+  remove_filter :orders
+  remove_filter :addresses
+
   
   form do |f|
     f.inputs do

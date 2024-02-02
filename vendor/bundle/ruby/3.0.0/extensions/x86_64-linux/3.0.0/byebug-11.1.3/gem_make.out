@@ -1,0 +1,22 @@
+current directory: /home/lenovo/Desktop/eCommerce/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+/home/lenovo/.rvm/rubies/ruby-3.0.0/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/lenovo/Desktop/eCommerce/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20240201-38636-oznu20 sitelibdir\=./.gem.20240201-38636-oznu20 clean
+
+current directory: /home/lenovo/Desktop/eCommerce/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20240201-38636-oznu20 sitelibdir\=./.gem.20240201-38636-oznu20
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/lenovo/Desktop/eCommerce/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20240201-38636-oznu20 sitelibdir\=./.gem.20240201-38636-oznu20 install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20240201-38636-oznu20/byebug
+
+current directory: /home/lenovo/Desktop/eCommerce/vendor/bundle/ruby/3.0.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20240201-38636-oznu20 sitelibdir\=./.gem.20240201-38636-oznu20 clean

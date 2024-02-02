@@ -8,7 +8,9 @@ class User < ApplicationRecord
 
    has_one_attached :image
 
-   has_one :cart
+   has_one :cart, dependent: :destroy 
+   has_many :orders, dependent: :destroy
+   has_many :addresses, dependent: :destroy
 
    after_create :create_cart
 
@@ -24,6 +26,10 @@ class User < ApplicationRecord
 
   def mark_reset_password_as_used
     update(reset_password_used: true)
+  end
+
+  def  create_cart
+    Cart.create(user_id: self.id)
   end
 
 end

@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  account_id: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  payment_method: MyString
+  total_mrp: 9.99
+  total_price: 9.99
+  discount_and_tax: 9.99
+  invoice_id: MyString
+  order_id: 1
+
+two:
+  user_id: 1
+  account_id: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip_code: MyString
+  payment_method: MyString
+  total_mrp: 9.99
+  total_price: 9.99
+  discount_and_tax: 9.99
+  invoice_id: MyString
+  order_id: 1
