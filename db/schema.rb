@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_29_072539) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_01_074343) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -56,6 +56,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_072539) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "street_address"
+    t.string "city"
+    t.string "state"
+    t.integer "zip_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
   create_table "admin_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -82,6 +93,28 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_072539) do
     t.index ["product_id", "cart_id"], name: "index_carts_products_on_product_id_and_cart_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "order_number"
+    t.decimal "total_mrp"
+    t.decimal "total_price"
+    t.decimal "discount"
+    t.decimal "tax"
+    t.string "payment_method"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "address_id", null: false
+    t.integer "status", default: 0
+    t.index ["address_id"], name: "index_orders_on_address_id"
+  end
+
+  create_table "orders_products", id: false, force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "order_id", null: false
+    t.index ["order_id", "product_id"], name: "index_orders_products_on_order_id_and_product_id"
+    t.index ["product_id", "order_id"], name: "index_orders_products_on_product_id_and_order_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -106,5 +139,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_29_072539) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "users"
   add_foreign_key "carts", "users"
+  add_foreign_key "orders", "addresses"
 end

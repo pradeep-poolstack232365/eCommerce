@@ -54,5 +54,8 @@ Rails.application.routes.draw do
   # resources :carts, only: [:show,:post,:delete]
 
 
+   resources :orders
+
+   resources :addresses
 
 end
