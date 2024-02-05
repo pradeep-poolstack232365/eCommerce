@@ -4,4 +4,11 @@ class AdminUser < ApplicationRecord
   devise :database_authenticatable, 
          :recoverable, :rememberable, :validatable
 
+  before_commit :set_flash
+
+  private
+  def set_flash
+    flash[:notice] = "Welcome to the admin login page"
+  end
+
 end

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 	# include Devise::Controllers::Helpers
     skip_before_action :verify_authenticity_token
     # before_action :set_current_user
+    before_action :set_flash
 
 	 private
 
@@ -17,6 +18,10 @@ class ApplicationController < ActionController::Base
 	    rescue JWT::DecodeError => e
 	      render json: { errors: e.message }, status: :unauthorized
 	    end
+	end
+
+	def set_flash
+		flash[:notice] = "Your flash message"
 	end
 
 end
