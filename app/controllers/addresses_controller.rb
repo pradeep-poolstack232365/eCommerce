@@ -1,12 +1,14 @@
 class AddressesController < ApplicationController
-# 	before_action :authenticate_request, except: [:create]
+	before_action :authenticate_request, except: [:create]
     before_action :authenticate_request
   def index
+    # byebug
       @addresses = @current_user.addresses
       render json: @addresses, each_serializer: AddressSerializer
   end
 
   def show
+    # byebug
       @address = @current_user.addresses.find_by(id: params[:id])
       if @address.present?
        render json: @address, each_serializer: AddressSerializer
@@ -16,8 +18,9 @@ class AddressesController < ApplicationController
   end
 
   def create
-    @address = Address.new(address_params.merge(user_id: @current_user.id))
-
+    # byebug
+    @address = Address.create(address_params.merge(user_id: @current_user.id))
+    # puts "@address: #{@address.inspect}"
     if @address.save
        render json: @address, each_serializer: AddressSerializer
     else
@@ -30,9 +33,9 @@ class AddressesController < ApplicationController
   	 # debugger
      @address = Address.find_by(id: params[:id])
         if @address&.update(address_params)
-           render json:{message: "address is updated successfully"}
+           render json:{message: "address is updated successfully"}, status: :ok
         else
-           render json:{notice: "something went wrong"}
+           render json:{notice: "something went wrong"}, status: :unauthorized
         end
   end
 
@@ -40,9 +43,9 @@ class AddressesController < ApplicationController
     # debugger
     @address = Address.find_by(id: params[:id])
         if @address&.destroy
-           render json: {message: "address is deleted successfully"}
+           render json: {message: "address is deleted successfully"}, status: :ok
         else
-           render json: {message: "already destroy"}
+           render json: {message: "already destroy"}, status: :unauthorized
         end
   end
 

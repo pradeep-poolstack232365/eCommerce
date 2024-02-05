@@ -1,9 +1,9 @@
-# FactoryBot.define do
-#   factory :address do
-#      street_address {"string"}
-#      state          {"string"}             
-#      city           {"string"}
-#      zip_code       {"integer"}
-#      user_id         {"bigint"}
-#   end
-# end
+FactoryBot.define do
+  factory :address do
+     street_address {"string_address"}
+     state          {"string_state"}             
+     city           {"string_city"}
+     zip_code       {123456}
+     user_id         {1}
+  end
+end

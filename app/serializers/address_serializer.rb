@@ -1,6 +1,6 @@
 class AddressSerializer < ActiveModel::Serializer
    
-     attributes :street_address, :city, :state, :zip_code
+     attributes :id, :street_address, :city, :state, :zip_code, :user_id
 
      def image	
         host = Rails.application.routes.default_url_options[:host] = "http://localhost:3000/"
