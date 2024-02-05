@@ -63,7 +63,12 @@ gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+# gem "tzinfo-data", platforms: %i[ windows jruby ]
+# gem "tzinfo-data", require: false
+
+# gem "tzinfo-data", platforms: %i[ jruby ] unless RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/
+
+gem "tzinfo-data", platforms: %i[ mswin mingw x64_mingw ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -73,11 +78,12 @@ gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
-  gem "rspec-rails"
+  gem "debug"
+  gem "rspec-rails" 
   gem "factory_bot_rails"
   gem "faker"
   # gem "rspec-rails", "~> 5.1.2"
+  gem 'rspec', '~> 3.10'
 
 end
 

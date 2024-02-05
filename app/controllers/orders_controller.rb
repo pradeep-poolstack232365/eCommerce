@@ -3,12 +3,16 @@ class OrdersController < ApplicationController
      before_action :authenticate_request
        
      def index
+      # byebug
         @orders = Order.all
         render json: @orders, each_serializer: OrderSerializer
      end 
 
      def show 
-       if @order = Order.find_by(id: params[:id])
+      # byebug
+       # @order = Order.find_by(id: params[:id]
+      @order = @current_user.orders.find_by(id: params[:id])
+       if @order.present?
         render json: @order, each_serializer: OrderSerializer
        else
         render json: {error: "Order not found"}, status: :unauthorized
@@ -16,7 +20,7 @@ class OrdersController < ApplicationController
      end  
 
      def create
-     	# debugger
+     	# byebug
      	@products = @current_user.cart.products
      	order = Order.new(
      		  	   user_id: @current_user.id,
@@ -55,6 +59,18 @@ class OrdersController < ApplicationController
                 order_number
               end 
           end
+
+        # def generate_order_number
+        #       order_number = SecureRandom.hex(3).to_i(16) % 1_000_000
+
+        #        # Ensure that the order_number is unique
+        #       existing_order = Order.find_by(order_number: order_number)
+        #        if existing_order
+        #         generate_order_number  # Recursively call the method until a unique order_number is generated
+        #          else
+        #            order_number
+        #         end
+        # end
 
 
 	     def calculate_total_mrp

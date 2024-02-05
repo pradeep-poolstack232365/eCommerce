@@ -18,6 +18,11 @@ module ECommerce
     config.autoload_lib(ignore: %w(assets tasks))
 
     config.api_only = true
+    config.session_store :cookie_store, key: 'ckjdscbsdhbcdshb'
+    # config.middleware.use ActionDispatch::Flash
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Flash
 
     # Configuration for the application, engines, and railties goes here.
     #

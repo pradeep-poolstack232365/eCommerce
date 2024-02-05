@@ -14,7 +14,7 @@ class CartsController < ApplicationController
 	end
 
 	def remove_product
-	# debugger
+	 # byebug
 	 unless @current_user
 	 	render json: {error: "User not authenticated"}, status: :unauthorized
 	 	return

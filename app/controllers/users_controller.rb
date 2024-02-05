@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
      before_action :authenticate_request, except: [:create,:index]
 		 before_action :set_user, only: [:show, :destroy]
+
     
 	def index
 		# byebug
@@ -17,7 +18,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 
 		if @user.save
-			render json: @user, each_serializer: UserSerializer
+			render json: @user, each_serializer: UserSerializer, status: :created
 		else
 			render json: {errors: @user.errors.full_messages}, 
 			status: :unprocessable_entity
@@ -25,7 +26,8 @@ class UsersController < ApplicationController
 	end
 
 	def update
-        
+        # debugger
+        @user = User.find_by(id: params[:id])
 		if @user&.update(user_params)
 			render json:{notice: "user is updated successfully"}
 		else
@@ -33,12 +35,15 @@ class UsersController < ApplicationController
         end
     end
 
+
 	def destroy
+		# debugger
+		@user = User.find_by(id: params[:id])
 		if @user.destroy
 			render json: {notice: "user is deleted successfully"}
-        else
+    else
          	render json: {message: "something went wrong"}
-        end
+    end
 	end
 
     private
